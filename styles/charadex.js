@@ -2,7 +2,7 @@
 /* URLs
 ======================================================================= */
 let url = new URL(window.location.href);
-let baseURL = window.location.origin + window.location.pathname;
+let baseURL = window.location.origin + '/' + window.location.pathname;
 let folderURL = window.location.origin + '/' + window.location.pathname.replace(/\/[^\/]+$/, "");
 let urlParams = new URLSearchParams(window.location.search);
 
