@@ -2,7 +2,7 @@
 /* URLs
 ======================================================================= */
 let url = new URL(window.location.href);
-let baseURL = window.location.origin + '/' + window.location.pathname;
+let baseURL = window.location.origin + window.location.pathname;
 let folderURL = window.location.origin + '/' + window.location.pathname.replace(/\/[^\/]+$/, "");
 let urlParams = new URLSearchParams(window.location.search);
 
@@ -719,7 +719,7 @@ const frontPage = (options) => {
 
                 // Add cardlink
                 let cardKey = Object.keys(selectDesigns[0])[0];
-                for (var i in selectDesigns) { selectDesigns[i].cardlink = folderURL + "masterlist.html?" + cardKey + "=" + selectDesigns[i][cardKey]; }
+                for (var i in selectDesigns) { selectDesigns[i].cardlink = folderURL + '/' + "masterlist.html?" + cardKey + "=" + selectDesigns[i][cardKey]; }
 
                 // Nyoom
                 let galleryOptions = {
