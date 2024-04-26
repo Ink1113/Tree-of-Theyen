@@ -65,12 +65,10 @@ body {
   --cd-body-font-family:                 'Montserrat', sans-serif;
   --cd-header-font-family:               coiny-regular-webfont.woff, sans-serif;
 @font-face{
-                        font-family: 'MyWebFont';
-                        src: url('WebFont.eot');
-                        src: url('WebFont.eot?#iefix') format('embedded-opentype'),
-                        url('WebFont.woff') format('woff'),
-                        url('WebFont.ttf') format('truetype'),
-                        url('WebFont.svg#webfont') format('svg');
+                        font-family: 'coiny-regular-webfont';
+                        url('coiny-regular-webfont.woff') format('woff'),
+                        url('coiny-regular-webfont.ttf') format('truetype'),
+                        url('coiny-regular-webfont.svg#webfont') format('svg');
                         }
 
   /* ============================================================= */
