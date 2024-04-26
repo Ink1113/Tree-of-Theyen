@@ -67,6 +67,7 @@ let optionSorter = (options) => {
 
         fauxFolderColumn: userOptions.fauxFolderColumn ? keyCreator(userOptions.fauxFolderColumn) : false,
         filterColumn: userOptions.filterColumn ? keyCreator(userOptions.filterColumn) : false,
+        filteruwuColumn: userOptions.filteruwuColumn ? keyCreator(userOptions.filteruwuColumn) : false,
         searchFilterParams: userOptions.searchFilterParams ? addAll(userOptions.searchFilterParams) : false,
 
     }
@@ -409,6 +410,7 @@ const charadexLarge = async (options) => {
 
         // Make filters workie
         charadexFilterSelect(charadex, sheetArray, charadexInfo.filterColumn);
+        charadexFilteruwuSelect(charadex, sheetArray, charadexInfo.filteruwuColumn);
         charadexSearch(charadex, charadexInfo.searchFilterParams);
 
         // Show pagination
@@ -521,6 +523,7 @@ const masterlist = async (options) => {
 
         // Make filters workie
         charadexFilterSelect(charadex, sheetArray, charadexInfo.filterColumn);
+        charadexFilteruwuSelect(charadex, sheetArray, charadexInfo.filteruwuColumn);
         charadexSearch(charadex, charadexInfo.searchFilterParams);
 
 
