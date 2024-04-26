@@ -120,7 +120,6 @@ let options = {
         filterColumn: 'Rarity',
         searchFilterParams: ['Trait'],
         fauxFolderColumn: 'Type',
-        fauxFolderColumn: 'Region',
     
     },
 
