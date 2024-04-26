@@ -410,7 +410,7 @@ const charadexLarge = async (options) => {
 
         // Make filters workie
         charadexFilterSelect(charadex, sheetArray, charadexInfo.filterColumn);
-        charadexFilteruwuSelect(charadex, sheetArray, charadexInfo.filteruwuColumn);
+        charadexFilterSelect(charadex, sheetArray, charadexInfo.filteruwuColumn);
         charadexSearch(charadex, charadexInfo.searchFilterParams);
 
         // Show pagination
