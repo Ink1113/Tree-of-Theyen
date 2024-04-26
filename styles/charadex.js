@@ -67,7 +67,6 @@ let optionSorter = (options) => {
 
         fauxFolderColumn: userOptions.fauxFolderColumn ? keyCreator(userOptions.fauxFolderColumn) : false,
         filterColumn: userOptions.filterColumn ? keyCreator(userOptions.filterColumn) : false,
-        filteruwuColumn: userOptions.filteruwuColumn ? keyCreator(userOptions.filteruwuColumn) : false,
         searchFilterParams: userOptions.searchFilterParams ? addAll(userOptions.searchFilterParams) : false,
 
     }
@@ -235,35 +234,6 @@ let charadexFilterSelect = (info, arr, key) => {
 
 
 /* ================================================================ */
-/* Cusuom Fiwtuwah UwU
-/* ================================================================ */
-let charadexFilterSelect = (info, arr, key) => {
-    if (key) {
-
-        const filterArr = [...new Set(arr.map(i => i[key]))];
-
-        if (filterArr.length > 2) {
-
-            addOptions(addAll(filterArr), $('#filteruwu'));
-
-            $("#filteruwu").on('change', () => {
-                let selectionuwu = $("#filteruwu option:selected").text().toLowerCase();
-                if (selectionuwu && !selectionuwu.includes('all')) {
-                    info.filter(function (i) { return i.values()[key].toLowerCase() == selection; });
-                } else {
-                    info.filter();
-                }
-            });
-
-            $('#filteruwu').parent().show();
-            $('#charadex-filters').show();
-
-        }
-    }
-};
-
-
-/* ================================================================ */
 /* Faux Folder Function
 /* ================================================================ */
 let fauxFolderButtons = (array, fauxFolder, params = urlParams) => {
@@ -410,7 +380,6 @@ const charadexLarge = async (options) => {
 
         // Make filters workie
         charadexFilterSelect(charadex, sheetArray, charadexInfo.filterColumn);
-        charadexFilterSelect(charadex, sheetArray, charadexInfo.filteruwuColumn);
         charadexSearch(charadex, charadexInfo.searchFilterParams);
 
         // Show pagination
@@ -523,7 +492,6 @@ const masterlist = async (options) => {
 
         // Make filters workie
         charadexFilterSelect(charadex, sheetArray, charadexInfo.filterColumn);
-        charadexFilteruwuSelect(charadex, sheetArray, charadexInfo.filteruwuColumn);
         charadexSearch(charadex, charadexInfo.searchFilterParams);
 
 
