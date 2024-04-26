@@ -278,15 +278,15 @@ let fauxFolderButtons = (array, fauxFolder, params = urlParams) => {
 /* ================================================================ */
 /* Faux Folder Function Customwustum UwU
 /* ================================================================ */
-let customfauxyFolderButtons = (array, fauxFolder, params = urlParams) => {
+let customfauxyFolderButtons = (array, fauxyFolder, params = urlParams) => {
 
-    if (array[0].hasOwnProperty(fauxFolder)) {
+    if (array[0].hasOwnProperty(fauxyFolder)) {
 
         // Creates Param Object Array
         let urlParamArray = [];
-        const uniqueArray = [...new Set(array.map(i => i[fauxFolder]))].filter(n => n);
+        const uniqueArray = [...new Set(array.map(i => i[fauxyFolder]))].filter(n => n);
         uniqueArray.forEach((i) => {
-            urlParamArray.push($('#charuwudex-filter-buttons a').clone().text(i).attr("href", baseURL + '?' + fauxFolder + '=' + i.toLowerCase()));
+            urlParamArray.push($('#charuwudex-filter-buttons a').clone().text(i).attr("href", baseURL + '?' + fauxyFolder + '=' + i.toLowerCase()));
         });
 
         if (urlParamArray.length > 1) {
@@ -307,8 +307,8 @@ let customfauxyFolderButtons = (array, fauxFolder, params = urlParams) => {
     }
 
     // Filters out information based on URL parameters
-    if (params.has(fauxFolder) && fauxFolder) {
-        return array.filter((i) => i[fauxFolder].toLowerCase() === params.get(fauxFolder).toLowerCase());
+    if (params.has(fauxyFolder) && fauxFolder) {
+        return array.filter((i) => i[fauxyFolder].toLowerCase() === params.get(fauxyFolder).toLowerCase());
     } else {
         return array;
     }
