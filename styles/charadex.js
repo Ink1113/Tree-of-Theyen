@@ -275,6 +275,45 @@ let fauxFolderButtons = (array, fauxFolder, params = urlParams) => {
 };
 
 
+/* ================================================================ */
+/* Faux Folder Function Customwustum UwU
+/* ================================================================ */
+let customfauxyFolderButtons = (array, fauxFolder, params = urlParams) => {
+
+    if (array[0].hasOwnProperty(fauxFolder)) {
+
+        // Creates Param Object Array
+        let urlParamArray = [];
+        const uniqueArray = [...new Set(array.map(i => i[fauxFolder]))].filter(n => n);
+        uniqueArray.forEach((i) => {
+            urlParamArray.push($('#charadex-filter-buttons a').clone().text(i).attr("href", baseURL + '?' + fauxFolder + '=' + i.toLowerCase()));
+        });
+
+        if (urlParamArray.length > 1) {
+
+            // Adds All button
+            urlParamArray.unshift($('#charadex-filter-buttons a').text('All').attr("href", baseURL));
+
+            // Smacks the links in your flex column
+            let btnCols = [];
+            for (var i in urlParamArray) { btnCols.push($('#charadex-filter-buttons').html(urlParamArray[i]).clone()); }
+            $('#filter-buttons .row').append(btnCols);
+
+            // Show Buttons
+            $('#filter-buttons').show();
+
+        }
+
+    }
+
+    // Filters out information based on URL parameters
+    if (params.has(fauxFolder) && fauxFolder) {
+        return array.filter((i) => i[fauxFolder].toLowerCase() === params.get(fauxFolder).toLowerCase());
+    } else {
+        return array;
+    }
+
+};
 
 
 /* ================================================================ */
@@ -332,6 +371,10 @@ const charadexLarge = async (options) => {
     // Create faux folders
     // Filter through array based on folders
     if (charadexInfo.fauxFolderColumn) sheetArray = fauxFolderButtons(sheetArray, charadexInfo.fauxFolderColumn);
+
+    // Create fauxywauxy folders
+    // Filter through array based on folders
+    if (charadexInfo.fauxFolderColumn) sheetArray = customfauxyFolderButtons(sheetArray, charadexInfo.fauxFolderColumn);
 
     // Reverse based on preference
     charadexInfo.itemOrder == 'asc' ? sheetArray.reverse() : '';
@@ -435,6 +478,10 @@ const masterlist = async (options) => {
     // Create faux folders
     // Filter through array based on folders
     if (charadexInfo.fauxFolderColumn) sheetArray = fauxFolderButtons(sheetArray, charadexInfo.fauxFolderColumn);
+
+    // Create fauxywauxy folders
+    // Filter through array based on folders
+    if (charadexInfo.fauxFolderColumn) sheetArray = customfauxyFolderButtons(sheetArray, charadexInfo.fauxFolderColumn);
 
     // Reverse based on preference
     charadexInfo.itemOrder == 'asc' ? sheetArray.reverse() : '';
