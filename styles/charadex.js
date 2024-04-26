@@ -286,17 +286,17 @@ let customfauxyFolderButtons = (array, fauxFolder, params = urlParams) => {
         let urlParamArray = [];
         const uniqueArray = [...new Set(array.map(i => i[fauxFolder]))].filter(n => n);
         uniqueArray.forEach((i) => {
-            urlParamArray.push($('#charadex-filter-buttons a').clone().text(i).attr("href", baseURL + '?' + fauxFolder + '=' + i.toLowerCase()));
+            urlParamArray.push($('#charuwudex-filter-buttons a').clone().text(i).attr("href", baseURL + '?' + fauxFolder + '=' + i.toLowerCase()));
         });
 
         if (urlParamArray.length > 1) {
 
             // Adds All button
-            urlParamArray.unshift($('#charadex-filter-buttons a').text('All').attr("href", baseURL));
+            urlParamArray.unshift($('#charuwudex-filter-buttons a').text('All').attr("href", baseURL));
 
             // Smacks the links in your flex column
             let btnCols = [];
-            for (var i in urlParamArray) { btnCols.push($('#charadex-filter-buttons').html(urlParamArray[i]).clone()); }
+            for (var i in urlParamArray) { btnCols.push($('#charuwudex-filter-buttons').html(urlParamArray[i]).clone()); }
             $('#filter-buttons .row').append(btnCols);
 
             // Show Buttons
