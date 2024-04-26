@@ -307,7 +307,7 @@ let customfauxyFolderButtons = (array, fauxyFolder, params = urlParams) => {
     }
 
     // Filters out information based on URL parameters
-    if (params.has(fauxyFolder) && fauxFolder) {
+    if (params.has(fauxyFolder) && fauxyFolder) {
         return array.filter((i) => i[fauxyFolder].toLowerCase() === params.get(fauxyFolder).toLowerCase());
     } else {
         return array;
@@ -374,7 +374,7 @@ const charadexLarge = async (options) => {
 
     // Create fauxywauxy folders
     // Filter through array based on folders
-    if (charadexInfo.fauxFolderColumn) sheetArray = customfauxyFolderButtons(sheetArray, charadexInfo.fauxFolderColumn);
+    if (charadexInfo.fauxyFolderColumn) sheetArray = customfauxyFolderButtons(sheetArray, charadexInfo.fauxyFolderColumn);
 
     // Reverse based on preference
     charadexInfo.itemOrder == 'asc' ? sheetArray.reverse() : '';
@@ -481,7 +481,7 @@ const masterlist = async (options) => {
 
     // Create fauxywauxy folders
     // Filter through array based on folders
-    if (charadexInfo.fauxFolderColumn) sheetArray = customfauxyFolderButtons(sheetArray, charadexInfo.fauxFolderColumn);
+    if (charadexInfo.fauxyFolderColumn) sheetArray = customfauxyFolderButtons(sheetArray, charadexInfo.fauxyFolderColumn);
 
     // Reverse based on preference
     charadexInfo.itemOrder == 'asc' ? sheetArray.reverse() : '';
