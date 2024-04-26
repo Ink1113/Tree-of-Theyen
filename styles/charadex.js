@@ -233,6 +233,34 @@ let charadexFilterSelect = (info, arr, key) => {
 };
 
 
+/* ================================================================ */
+/* Cusuom Fiwtuwah UwU
+/* ================================================================ */
+let charuwudexFilterSelect = (info, arr, key) => {
+    if (key) {
+
+        const filterArr = [...new Set(arr.map(i => i[key]))];
+
+        if (filterArr.length > 2) {
+
+            addOptions(addAll(filterArr), $('#filteruwu'));
+
+            $("#filteruwu").on('change', () => {
+                let selectionuwu = $("#filteruwu option:selected").text().toLowerCase();
+                if (selectionuwu && !selectionuwu.includes('all')) {
+                    info.filter(function (i) { return i.values()[key].toLowerCase() == selection; });
+                } else {
+                    info.filter();
+                }
+            });
+
+            $('#filteruwu').parent().show();
+            $('#charadex-filters').show();
+
+        }
+    }
+};
+
 
 /* ================================================================ */
 /* Faux Folder Function
