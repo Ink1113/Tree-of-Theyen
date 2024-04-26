@@ -237,7 +237,7 @@ let charadexFilterSelect = (info, arr, key) => {
 /* ================================================================ */
 /* Cusuom Fiwtuwah UwU
 /* ================================================================ */
-let charuwudexFilterSelect = (info, arr, key) => {
+let charadexFilterSelect = (info, arr, key) => {
     if (key) {
 
         const filterArr = [...new Set(arr.map(i => i[key]))];
