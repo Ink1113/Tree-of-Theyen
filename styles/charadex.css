@@ -63,7 +63,7 @@ body {
   /* Main Fonts
   ================================================================ */
   --cd-body-font-family:                 'Montserrat', sans-serif;
-  --cd-header-font-family:               coiny-regular-webfont.woff format("woff"), sans-serif;
+  --cd-header-font-family:               coiny-regular-webfont.woff, sans-serif;
 
 
 
